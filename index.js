@@ -8,10 +8,10 @@
  * @param {string} method - Name of FileReader method (e.g. "readAsDataURL")
  * @param {Blob} blob - Blob or File to read
  * @param {number} [timeoutMs] - Milliseconds to wait before timing out
- * @param {number} [onFinishAfterTimeout] - Passed { error } or { result }
+ * @param {function} [onFinishAfterTimeout] - Passed { error } or { result }
  *                 when FileReader completes *after* timeout period. Could be
  *                 useful for determing the ideal timeout period.
- * @param {number} [timeoutFunction] - Allow timeout function to be overriden.
+ * @param {function} [timeoutFunction] - Allow timeout function to be overriden.
  *                 Should accept callback & timeoutMs parameters and return a
  *                 cancellation function. For instance, you could use:
  *                 https://github.com/micahjon/while-tab-visible-setTimeout
@@ -97,7 +97,7 @@ export default function reliableFileReader(
  * Functional wrapper around setTimeout
  * Has the same API as whileTabVisibleTimeout in case the user opts out of that
  * @param {function} callback
- * @param {function} timeoutMs
+ * @param {number} timeoutMs
  * @param {function} stopWaiting
  */
 function simpleTimeout(callback, timeoutMs) {
