@@ -33,7 +33,7 @@ reliableFileReader('readAsDataURL', blob)
 
 ### Parameters
 
-#### method {string}
+#### method `{string}`
 
 Name of FileReader method (e.g. "readAsDataURL")
 
@@ -52,7 +52,7 @@ reliableFileReader('readAsDataURL', blob, { timeoutMs: 10000 });
 
 #### options.onFinishAfterTimeout {function}
 
-Passed { error } or { result } when FileReader completes _after_ timeout period. Could be useful for determing the ideal timeout period.
+Passed `{ error }` or `{ result }` when FileReader completes _after_ it times out. Could be useful for determing the ideal timeout period.
 
 ```js
 const startTime = Date.now();
