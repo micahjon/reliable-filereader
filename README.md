@@ -33,26 +33,26 @@ reliableFileReader('readAsDataURL', blob)
 
 ### Parameters
 
-#### method `{string}`
+#### method
 
-Name of FileReader method (e.g. "readAsDataURL")
+`{string}` Name of FileReader method (e.g. "readAsDataURL")
 
-#### blob {Blob}
+#### blob
 
-Blob or File to read
+`{Blob}` Blob or File to read
 
-#### options.timeoutMs {number}
+#### options.timeoutMs
 
-Milliseconds to wait before timing out. Defaults to **15 seconds**.
+`{number}` Milliseconds to wait before timing out. Defaults to **15 seconds**.
 
 ```js
 // Only wait 10 seconds before giving up
 reliableFileReader('readAsDataURL', blob, { timeoutMs: 10000 });
 ```
 
-#### options.onFinishAfterTimeout {function}
+#### options.onFinishAfterTimeout
 
-Passed `{ error }` or `{ result }` when FileReader completes _after_ it times out. Could be useful for determing the ideal timeout period.
+`{function}` Passed `{ error }` or `{ result }` when FileReader completes _after_ it times out. Could be useful for determing the ideal timeout period.
 
 ```js
 const startTime = Date.now();
@@ -68,10 +68,10 @@ reliableFileReader('readAsDataURL', blob, {
 });
 ```
 
-#### timeoutFunction {function}
+#### options.timeoutFunction
 
-The timeout function to be overriden.
-By default, it's just a simple wrapper around setTimeout that accepts a callback {function} and timeoutMs {number} and returns a cancellation function, e.g.
+`{function}` The timeout function to be overriden.
+By default, it's just a simple wrapper around setTimeout that accepts a callback `{function}` and timeoutMs `{number}` and returns a cancellation function, e.g.
 
 ```js
 function simpleTimeout(callback, timeoutMs) {
