@@ -21,7 +21,7 @@ export default function reliableFileReader(
     method,
     blob,
     {
-        timeoutMs = 30000,
+        timeoutMs = 15000,
         onFinishAfterTimeout = () => {},
         timeoutFunction = simpleTimeout,
     } = {}

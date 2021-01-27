@@ -23,7 +23,7 @@ reliableFileReader('readAsDataURL', blob)
     })
     .catch((error) => {
         if (/timed out/.test(error)) {
-            // FileReader took longer than 10 seconds
+            // FileReader has not responded within 15 seconds
         } else {
             // FileReader fired an error event.
             const errorEvent = error;
@@ -43,7 +43,7 @@ Blob or File to read
 
 #### options.timeoutMs {number}
 
-Milliseconds to wait before timing out. Defaults to **30 seconds**.
+Milliseconds to wait before timing out. Defaults to **15 seconds**.
 
 ```js
 // Only wait 10 seconds before giving up
